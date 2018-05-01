@@ -1,4 +1,4 @@
-package com.tai.TVShowsProgresser;
+package com.tai.TvShowsProgresser;
 
 public class TvShowsProgresserApplicationTests {
 
