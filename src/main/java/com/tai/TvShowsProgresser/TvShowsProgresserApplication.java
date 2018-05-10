@@ -1,20 +1,23 @@
 package com.tai.TvShowsProgresser;
 
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
+import java.io.IOException;
 import java.util.Arrays;
-
 @SpringBootApplication
 public class TvShowsProgresserApplication {
-
-  public static void main(String[] args) {
+  public static void main(String[] args) throws IOException {
             SpringApplication.run(TvShowsProgresserApplication.class, args);
+            TmdbConnection connection = new TmdbConnection();
+            connection.present();
 
   }
+
 
   @Bean
   public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
