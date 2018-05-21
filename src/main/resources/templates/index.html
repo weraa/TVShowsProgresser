@@ -1,51 +1,30 @@
 <!--<!DOCTYPE html>-->
-<!--<html lang="en" xmlns:th="http://www.thymeleaf.org/">-->
-<!--<head th:replace="fragments :: head"></head>-->
-<!--<body>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />-->
+    <!--<title>Spring Social Login</title>-->
+<!--</head>-->
 
-<!--<h1 th:text="${title}">Tv Shows Progresser</h1>-->
-
-<!--<script>-->
-    <!--window.fbAsyncInit = function() {-->
-        <!--FB.init({-->
-            <!--appId      : '133588860742878',-->
-            <!--cookie     : true,-->
-            <!--xfbml      : true,-->
-            <!--version    : '3.0'-->
-        <!--});-->
-
-        <!--FB.AppEvents.logPageView();-->
-
-    <!--};-->
-
-    <!--(function(d, s, id){-->
-        <!--var js, fjs = d.getElementsByTagName(s)[0];-->
-        <!--if (d.getElementById(id)) {return;}-->
-        <!--js = d.createElement(s); js.id = id;-->
-        <!--js.src = "https://connect.facebook.net/en_US/sdk.js";-->
-        <!--fjs.parentNode.insertBefore(js, fjs);-->
-    <!--}(document, 'script', 'facebook-jssdk'));-->
-<!--</script>-->
-
-<!--<fb:login-button-->
-        <!--scope="public_profile,email"-->
-        <!--onlogin="checkLoginState();">-->
-<!--</fb:login-button>-->
-
-<!--</body>-->
-<!--</html>-->
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <body>
-<h1 th:text="${title}">Tv Shows Progresser</h1>
-<nav>
-    <p sec:authentication="name">Username</p>
-    <a th:href="@{/logout}">Logout</a>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" th:href="@{/}">Spring Social Login</a>
+        </div>
+        <p class="navbar-text navbar-right">
+            <span sec:authentication="name">Username</span> &nbsp; &nbsp; &nbsp;
+            <a th:href="@{/logout}">Logout</a>&nbsp; &nbsp; &nbsp;
+        </p>
+    </div><!-- /.container-fluid -->
 </nav>
 
-<h1>Welcome, <span sec:authentication="name">Username</span></h1>
-<p sec:authentication="authorities">User authorities</p>
+<div class="container">
+    <h1 class="col-sm-12">Welcome, <span sec:authentication="name">Username</span></h1>
+    <p class="col-sm-12 text-muted" sec:authentication="authorities">User authorities</p>
+</div>
 </body>
 </html>
